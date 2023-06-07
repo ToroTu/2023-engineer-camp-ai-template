@@ -1,5 +1,8 @@
 {
   "editor.tabSize": 2,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "emmet.triggerExpansionOnTab": true,
   // "prettier.printWidth": 300,
   "powermode.enabled": true,
