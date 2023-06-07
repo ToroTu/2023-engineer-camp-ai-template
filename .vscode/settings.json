@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "emmet.triggerExpansionOnTab": true,
+  // "prettier.printWidth": 300,
+  "powermode.enabled": true,
+  "powermode.shake.enabled": false,
+  "powermode.combo.counterEnabled": "show",
+  "powermode.presets": "particles",
+}

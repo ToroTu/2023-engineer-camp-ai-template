@@ -1,6 +1,4 @@
-const {
-  OPENAI_MAX_TOKENS,
-} = require('../configs');
+const { OPENAI_MAX_TOKENS } = require('../configs');
 
 const openai = require('../connections/openai');
 

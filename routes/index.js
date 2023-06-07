@@ -1,8 +1,6 @@
 const express = require('express');
 
-const {
-  OPENAI_CONTENT,
-} = require('../configs');
+const { OPENAI_CONTENT } = require('../configs');
 
 const chatAI = require('../services/openai');
 
