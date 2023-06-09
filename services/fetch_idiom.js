@@ -51,7 +51,7 @@ const getIdiom = async (href) => {
   // --- 爬蟲
   const $ = cheerio.load(body);
   const description = $('#row_useExample td[headers="th_useExample"] h4')
-    .filter((_, item) => item.childNodes[0]?.data == '語義說明')
+    .filter((_, item) => item.firstChild?.data == '語義說明')
     .map((_, item) => item.nextSibling)
     .map((_, item) => item.data);
   return description;
