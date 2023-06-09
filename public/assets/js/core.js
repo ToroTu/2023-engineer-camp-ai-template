@@ -83,10 +83,27 @@ const checkConfig = () => {
   }, 1000);
 };
 
+const initForm = () => {
+  document.querySelector('#form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = document.createElement('form');
+    form.style.display = 'none';
+    form.method = 'POST';
+    form.action = '/';
+    const input = document.createElement('textarea');
+    input.name = 'description';
+    input.value = inputContent.ques;
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+  });
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   elemQues = document.querySelector('#ques');
   elemGrandmaster = document.querySelector('.grandmaster');
   initInput();
+  initForm();
   initPopup();
   checkConfig();
 });
