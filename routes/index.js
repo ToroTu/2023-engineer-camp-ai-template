@@ -54,7 +54,8 @@ router
         {
           title: convertToSimp('不專業成語大師'),
           ques_placeholder: convertToSimp(
-            '說吧 想問啥成語意思，或者給我描述幫你想成語'
+            // '說吧 想問啥成語意思，或者給我描述幫你想成語'
+            '說吧 給我點描述幫你想成語'
           ),
           type,
         },
