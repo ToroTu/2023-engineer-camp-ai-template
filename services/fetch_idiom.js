@@ -29,11 +29,12 @@ const checkIdiom = async (text) => {
     };
   }
   const href = $list.find('td[headers="thVal"] a').attr('href');
-  const idiom = await getIdiom(href);
-  const description = Array.from(
-    { length: idiom.length },
-    (_, i) => idiom[i]
-  ).join('');
+  // const idiom = await getIdiom(href);
+  // const description = Array.from(
+  //   { length: idiom.length },
+  //   (_, i) => idiom[i]
+  // ).join('');
+  const description = '';
   return {
     status: true,
     href: BASE_URL + href,
@@ -45,19 +46,19 @@ const checkIdiom = async (text) => {
  * 取得成語資料
  * @param {string} href
  */
-const getIdiom = async (href) => {
-  const url = BASE_URL + href;
-  const { data: body } = await axios.get(url);
-  // --- 爬蟲
-  const $ = cheerio.load(body);
-  const description = $('#row_useExample td[headers="th_useExample"] h4')
-    .filter((_, item) => {
-      // console.log('item:::', item.firstChild?.data);
-      return item['firstChild']?.data == '語義說明';
-    })
-    .map((_, item) => item.nextSibling)
-    .map((_, item) => item.data);
-  return description;
-};
+// const getIdiom = async (href) => {
+//   const url = BASE_URL + href;
+//   const { data: body } = await axios.get(url);
+//   // --- 爬蟲
+//   const $ = cheerio.load(body);
+//   const description = $('#row_useExample td[headers="th_useExample"] h4')
+//     .filter((_, item) => {
+//       // console.log('item:::', item.firstChild?.data);
+//       return item?.firstChild?.data == '語義說明';
+//     })
+//     .map((_, item) => item.nextSibling)
+//     .map((_, item) => item.data);
+//   return description;
+// };
 
 module.exports = { checkIdiom };
