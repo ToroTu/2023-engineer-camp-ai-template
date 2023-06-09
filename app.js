@@ -26,7 +26,7 @@ app.use(
     secret: 'engineer-camp-week5',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 10000 },
+    cookie: { maxAge: 5000 },
   })
 );
 app.use(flash());
@@ -42,7 +42,8 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = err;
 
   // render the error page
   res.status(err.status || 500);
