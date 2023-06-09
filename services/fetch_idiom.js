@@ -1,5 +1,5 @@
 const axios = require('axios');
-// const cheerio = require('cheerio');
+const cheerio = require('cheerio');
 
 /** 國家教育研究院教育部成語典網站 */
 const BASE_URL = 'https://dict.idioms.moe.edu.tw/';
