@@ -4,6 +4,10 @@ const { OPENAI_CONTENT } = require('../configs');
 
 const chatAI = require('../services/openai');
 
+const convertToSimp = require('../services/transform_trad2simp');
+
+const { checkIdiom } = require('../services/fetch_idiom');
+
 const router = express.Router();
 
 /** 映射鍵值 */
