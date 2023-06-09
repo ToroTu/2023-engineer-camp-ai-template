@@ -19,16 +19,16 @@ const checkIdiom = async (text) => {
       qTp: 1,
     },
   });
-  // // --- 爬蟲
-  // const $ = cheerio.load(body);
-  // const $list = $('#mainContent table.searchL tbody tr');
-  // const length = $list.length;
-  // if (1 !== length) {
-  //   return {
-  //     status: false,
-  //   };
-  // }
-  // const href = $list.find('td[headers="thVal"] a').attr('href');
+  // --- 爬蟲
+  const $ = cheerio.load(body);
+  const $list = $('#mainContent table.searchL tbody tr');
+  const length = $list.length;
+  if (1 !== length) {
+    return {
+      status: false,
+    };
+  }
+  const href = $list.find('td[headers="thVal"] a').attr('href');
   // const idiom = await getIdiom(href);
   // const description = Array.from(
   //   { length: idiom.length },
