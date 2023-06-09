@@ -20,8 +20,8 @@ const checkIdiom = async (text) => {
     },
   });
   // --- 爬蟲
-  const $ = cheerio.load(body);
-  const $list = $('#mainContent table.searchL tbody tr');
+  let $ = cheerio.load(body);
+  let $list = $('#mainContent table.searchL tbody tr');
   const length = $list.length;
   if (1 !== length) {
     return {
@@ -29,6 +29,8 @@ const checkIdiom = async (text) => {
     };
   }
   const href = $list.find('td[headers="thVal"] a').attr('href');
+  $ = null;
+  $list = null;
   const idiom = await getIdiom(href);
   // const description = Array.from(
   //   { length: idiom.length },
@@ -53,7 +55,7 @@ const getIdiom = async (href) => {
   // let description = $('#row_mean td[headers="th_mean"]').text();
   // description = description.replace(/\<br\>.+\<a.+/, '');
   const description = $('#row_useExample td[headers="th_useExample"] h4')
-    // .filter((_, item) => item.childNodes[0]?.data == '語義說明')
+    .filter((_, item) => item.childNodes[0]?.data == '語義說明')
     // .map((_, item) => item.nextSibling)
   //   .map((_, item) => item.data);
   // return description;
