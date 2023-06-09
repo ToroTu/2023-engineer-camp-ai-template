@@ -10,15 +10,15 @@ const BASE_URL = 'https://dict.idioms.moe.edu.tw/';
  * @returns {Promise<{status: boolean, href?: string, description?:string}>}
  */
 const checkIdiom = async (text) => {
-  // /** 成語典網站 */
-  // const url = BASE_URL + 'idiomList.jsp';
-  // const { data: body } = await axios.get(url, {
-  //   params: {
-  //     idiom: text,
-  //     qMd: 0,
-  //     qTp: 1,
-  //   },
-  // });
+  /** 成語典網站 */
+  const url = BASE_URL + 'idiomList.jsp';
+  const { data: body } = await axios.get(url, {
+    params: {
+      idiom: text,
+      qMd: 0,
+      qTp: 1,
+    },
+  });
   // // --- 爬蟲
   // const $ = cheerio.load(body);
   // const $list = $('#mainContent table.searchL tbody tr');
