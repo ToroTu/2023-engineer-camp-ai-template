@@ -48,8 +48,8 @@ const checkIdiom = async (text) => {
 const getIdiom = async (href) => {
   const url = BASE_URL + href;
   const { data: body } = await axios.get(url);
-  // // --- 爬蟲
-  // const $ = cheerio.load(body);
+  // --- 爬蟲
+  const $ = cheerio.load(body);
   // // let description = $('#row_mean td[headers="th_mean"]').text();
   // // description = description.replace(/\<br\>.+\<a.+/, '');
   // const description = $('#row_useExample td[headers="th_useExample"] h4')
