@@ -56,7 +56,7 @@ const getIdiom = async (href) => {
   // description = description.replace(/\<br\>.+\<a.+/, '');
   const description = $('#row_useExample td[headers="th_useExample"] h4')
     // .filter((_, item) => item['childNodes']?.at(0)?.data)
-    .filter((_, item) => item?.childNodes.at(0)?.data == '語義說明')
+    // .filter((_, item) => item?.childNodes.at(0)?.data == '語義說明')
     .map((_, item) => item.nextSibling)
     .map((_, item) => item.data);
   return description;
