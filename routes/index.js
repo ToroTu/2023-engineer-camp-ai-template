@@ -70,11 +70,11 @@ router
       res.redirect('/');
       return;
     }
-    const { status, href, description: idiomExplanation } = await checkIdiom(
-      ques
-    );
+    // const { status, href, description: idiomExplanation } = await checkIdiom(
+    //   ques
+    // );
     // 取得成語釋義
-    if (status) {
+    if (false) {
       req.flash(MAP_FLASH_KEY.TYPE, 1);
       req.flash(MAP_FLASH_KEY.IDIOM_NAME, ques);
       req.flash(MAP_FLASH_KEY.IDIOM_INTERPRETATION, idiomExplanation);
