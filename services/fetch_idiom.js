@@ -31,7 +31,7 @@ const checkIdiom = async (text) => {
   const href = $list.find('td[headers="thVal"] a').attr('href');
   $ = null;
   $list = null;
-  const idiom = await getIdiom(href);
+  // const idiom = await getIdiom(href);
   // const description = Array.from(
   //   { length: idiom.length },
   //   (_, i) => idiom[i]
