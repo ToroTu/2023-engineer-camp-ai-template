@@ -26,7 +26,7 @@ app.use(
     secret: 'engineer-camp-week5',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 5000 },
+    cookie: { maxAge: 10000 },
   })
 );
 app.use(flash());
