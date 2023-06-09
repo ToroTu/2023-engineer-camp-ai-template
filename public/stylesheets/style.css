@@ -1,52 +1,231 @@
-*{
-  box-sizing: border-box;
-}
+html,
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: black;
-  color: white;
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  background-color: #dddddd;
+}
+
+.ff-mashanzheng {
+  font-family: 'Ma Shan Zheng', cursive, sans-serif;
+}
+.ff-liujianmaocao {
+  font-family: 'Liu Jian Mao Cao', cursive, sans-serif;
+}
+
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 80rem;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.main form {
+  width: 95%;
+}
+
+.title {
+  margin: 0 auto;
   text-align: center;
-  height:100vh;
+}
+.title svg {
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: visible;
+  width: 90%;
+  max-width: 40rem;
 }
 
-::placeholder {
-  font-size: 12px;
+.btn-send {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.625rem 0.75rem;
+  color: #232323;
+  border-radius: 1rem;
+  line-height: 1;
+  transition: all 150ms;
+}
+.btn-send .material-icons {
+  font-size: 1.5rem;
+  vertical-align: bottom;
+}
+.btn-send:hover,
+.btn-send:focus {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.card {
-  border: 1px solid #1b1b1b;
-  border-radius: 16px;
-  background-color: #222222;
-  padding: 32px 24px; 
+.input-wrap {
+  display: block;
+  padding: 2rem 1rem;
+  padding-right: 0;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
 }
-.card-img {
-  width: 150px;
+.input-wrap.focus {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12) !important;
 }
-.card-title {
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 24px;
+.input-wrap.can + .btn-send {
+  display: inline-block;
 }
-.card-text {
-  font-size: 40px;
+.input {
+  display: block;
+  width: 100%;
+  padding-right: 1rem;
+  font-size: 1.25rem;
+  resize: none;
+  outline: none;
+  background-color: transparent;
 }
-.card-input {
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin-right: 8px;
-  border: none;
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
-.card-btn {
-  background-color: #ffce45;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+
+.input-group {
+  flex: 1;
+  position: relative;
+  margin: 1.5rem 0 0.5rem auto;
 }
-.card-btn:hover {
-  opacity: .8;
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+.grandmaster {
+  display: block;
+  width: 18.75rem;
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-45%);
+  transition-duration: 1000ms;
+  transition-property: filter, transform;
+  pointer-events: none;
+}
+.grandmaster.move {
+  filter: drop-shadow(-5px 1px 6px rgba(0, 0, 0, 0.4));
+  transform: translate(calc(-45% + 3px), -0.5px);
+}
+.grandmaster-wrap {
+  position: relative;
+  width: 20%;
+  z-index: 1;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  bottom: 43%;
+  left: 97%;
+  width: 400px;
+  max-width: calc(85vw - 80%);
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+.popup::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  background: url('../assets/img/sayframe.png') no-repeat center center;
+  background-size: 120%;
+  transform: scaleX(-1);
+  opacity: 0.8;
+}
+.popup.preshow,
+.popup.show {
+  display: block;
+}
+.popup.show {
+  opacity: 1;
+}
+.popup-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72%;
+  min-height: 24%;
+  max-height: 44%;
+  margin-left: 2%;
+  margin-top: -1%;
+  padding-right: 4%;
+  color: transparent;
+  font-size: 1.25rem;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  text-align: justify;
+}
+.popup-wrap::-webkit-scrollbar {
+  display: none;
+}
+.popup-wrap .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-right: 5.555556%;
+  color: #232323;
+}
+.popup .btn-close {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  padding: 0.25rem;
+  transform: translateX(-50%);
+  border-radius: 100%;
+  border: 1px solid rgba(136, 136, 136, 0.9);
+}
+.popup .btn-close .material-icons {
+  vertical-align: bottom;
+}
+.popup .btn-close:hover,
+.popup .btn-close:focus {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    width: 80%;
+  }
+  .grandmaster {
+    width: 22.5rem;
+    margin-top: 5vh;
+  }
+  .popup {
+    bottom: 30%;
+  }
+}
+@media (orientation: portrait) {
+  .grandmaster {
+    margin-top: 15vh;
+  }
+}
+@media (orientation: landscape) and (max-device-width: 992px) {
+  .title svg {
+    max-width: 30rem;
+  }
+  .wrap {
+    width: 80%;
+  }
+  .grandmaster {
+    width: 12.5rem;
+  }
+  .popup {
+    bottom: 8%;
+    left: 84%;
+    width: 380px;
+  }
 }
